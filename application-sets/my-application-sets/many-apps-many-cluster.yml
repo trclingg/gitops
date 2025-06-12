@@ -17,11 +17,11 @@ spec:
           - clusters: {}
   template:
     metadata:
-      name: default
+      name: '{{path.basename}}-{{name}}'
     spec:
-      project: '{{metadata.labels.environment}}'
+      project: default
       source:
-        repoURL: https://github.com/trclingg/gitops-cert-level-2-examples.git
+        repoURL: https://github.com/argoproj/argo-cd.git
         targetRevision: HEAD
         path: '{{path}}'
       destination:
